@@ -1,5 +1,5 @@
 # Capstone-Submission
-<img src="[YOUR_IMAGE_URL_HERE](https://drive.google.com/file/d/1sBHZWSzvKRVuyhS1HCtithM1SinO5Fve/view?usp=sharing)" width=600>`
+<img src="https://drive.google.com/file/d/1sBHZWSzvKRVuyhS1HCtithM1SinO5Fve/view?usp=sharing" width=600>`
 Overview
 
 Description: The Pokedex app is a comprehensive mobile application designed for Pokémon enthusiasts. It serves as a digital encyclopedia, providing information about various Pokémon species, their abilities, evolutions, and statistics. The app aims to enhance the Pokémon gaming experience by offering features like augmented reality (AR) for real-world exploration and interaction with virtual Pokémon.
