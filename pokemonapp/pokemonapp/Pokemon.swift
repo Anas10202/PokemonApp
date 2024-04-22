@@ -17,11 +17,27 @@ struct PokemonResponse: Decodable {
 
 struct Pokemon: Decodable {
   let name: String
+  let types: [PokemonType]?
   let url: String?
   var imageUrl: String?
 
   enum CodingKeys: String, CodingKey {
     case name
+    case types
     case url
   }
+
+}
+
+struct PokemonType: Decodable {
+    let slot: Int
+    let type: Type
+}
+
+struct Type: Decodable {
+    let name: String
+    let url: String
+}
+struct PokemonDetails: Decodable {
+    let types: [PokemonType]
 }

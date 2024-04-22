@@ -8,11 +8,24 @@
 import UIKit
 import Nuke
 
+
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var pokemons: [Pokemon] = []
+    let pokemonColors: [String: UIColor] = [
+        "grass": .green,
+        "fire": .orange,
+        "water": .blue,
+        "electric":.yellow,
+        "dark":.darkGray,
+        "psychic": .systemPink,
+        "ground":.brown,
+        "ghost":.purple,
+        "steel":.gray,
+
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +59,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
           for pokemon in pokemons {
               print("Fetched Pokémon: \(pokemon.name)")
           }
+        
 
           DispatchQueue.main.async {
             self?.pokemons = pokemons
@@ -71,9 +85,48 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
       let pokemon = pokemons[indexPath.item]
       cell.pokemonTitle.text = pokemon.name
+        
+        if !pokemon.name.isEmpty {
+            let pokemonName = pokemon.name
+            let apiUrl = "https://pokeapi.co/api/v2/pokemon/\(pokemonName.lowercased())"
+            if let url = URL(string: apiUrl) {
+                let session = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                    if let error = error {
+                        print("Request failed: \(error.localizedDescription)")
+                        return
+                    }
+
+                    guard let data = data else {
+                        print("No data returned from request")
+                        return
+                    }
+
+                    do {
+                        let pokemonDetails = try JSONDecoder().decode(PokemonDetails.self, from: data)
+                        // Access the type information from pokemonDetails and set the cell's background color
+
+                        if let typeName = pokemonDetails.types.first?.type.name, let color = self?.pokemonColors[typeName] {
+                            DispatchQueue.main.async {
+                                cell.backgroundColor = color
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                cell.backgroundColor = .gray // Default color if type is not found
+                            }
+                        }
+                    } catch {
+                        print("Error decoding JSON data into PokemonDetails: \(error.localizedDescription)")
+                    }
+                }
+                session.resume()
+            }
+        } else {
+            cell.backgroundColor = .gray // Default color if no name is found
+        }
+
 
       if let pokemonId = getPokemonId(from: pokemon.url) {
-        let imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(pokemonId).png"
+        let imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/\(pokemonId).gif"
         if let url = URL(string: imageUrl) {
           Nuke.loadImage(with: url, into: cell.pokemonImageView)
         }
