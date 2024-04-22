@@ -18,7 +18,7 @@ struct PokemonResponse: Decodable {
 struct Pokemon: Decodable {
   let name: String
   let url: String?
-  var imageUrl: String? // To store the constructed image URL
+  var imageUrl: String?
 
   enum CodingKeys: String, CodingKey {
     case name
