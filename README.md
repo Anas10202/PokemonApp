@@ -1,4 +1,11 @@
-# Capstone-Submission
+# Pokemon App
+([https://www.loom.com/share/af2cfb1629c3487498fdcd7742d805c4])
+
+- [x] Able to see pokemon
+- [x] see detail view
+- [x] have both colelction view and table view
+
+
 ![IMG_0615](https://github.com/Anas10202/Capstone-Submission/assets/77549785/3ecc4bfa-0393-4bf0-91f1-b0c72e5ae725)
 
 Overview
