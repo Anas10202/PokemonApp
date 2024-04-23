@@ -24,6 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         "ground":.brown,
         "ghost":.purple,
         "steel":.gray,
+        "flying":.cyan
 
     ]
     
@@ -35,6 +36,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         fetchPokemon()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        
+        // Get the selected movie from the movies array using the selected index path's row
+        let selectedPokemon = pokemons[selectedIndexPath.row]
+        
+        // Get access to the detail view controller via the segue's destination. (guard to unwrap the optional)
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
+        
+        detailViewController.pokemon = selectedPokemon
+    }
     private func fetchPokemon() {
       guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0") else { return }
       let session = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
@@ -137,7 +149,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       // Define your desired cell size here (e.g., width: 100, height: 100)
-      return CGSize(width: 300, height: 300)
+      return CGSize(width: 1000, height: 1000)
     }
 
 
