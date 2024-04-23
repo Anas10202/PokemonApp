@@ -18,6 +18,8 @@
 		8624F5692BD49E410070DC91 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F5682BD49E410070DC91 /* Pokemon.swift */; };
 		8624F56C2BD5707A0070DC91 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 8624F56B2BD5707A0070DC91 /* Nuke */; };
 		8624F5BE2BD60EC60070DC91 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F5BD2BD60EC60070DC91 /* DetailViewController.swift */; };
+		8624F5C22BD750460070DC91 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F5C12BD750460070DC91 /* TableViewController.swift */; };
+		8624F5C42BD754080070DC91 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F5C32BD754080070DC91 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		8624F5662BD49D2A0070DC91 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8624F5682BD49E410070DC91 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		8624F5BD2BD60EC60070DC91 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8624F5C12BD750460070DC91 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8624F5C32BD754080070DC91 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 				8624F5512BD49C730070DC91 /* SceneDelegate.swift */,
 				8624F5532BD49C730070DC91 /* ViewController.swift */,
 				8624F5552BD49C730070DC91 /* Main.storyboard */,
+				8624F5C32BD754080070DC91 /* TableViewCell.swift */,
+				8624F5C12BD750460070DC91 /* TableViewController.swift */,
 				8624F5662BD49D2A0070DC91 /* PokemonCollectionViewCell.swift */,
 				8624F5682BD49E410070DC91 /* Pokemon.swift */,
 				8624F55B2BD49C740070DC91 /* Assets.xcassets */,
@@ -161,6 +167,8 @@
 				8624F5542BD49C730070DC91 /* ViewController.swift in Sources */,
 				8624F55A2BD49C730070DC91 /* pokemonapp.xcdatamodeld in Sources */,
 				8624F5502BD49C730070DC91 /* AppDelegate.swift in Sources */,
+				8624F5C42BD754080070DC91 /* TableViewCell.swift in Sources */,
+				8624F5C22BD750460070DC91 /* TableViewController.swift in Sources */,
 				8624F5672BD49D2A0070DC91 /* PokemonCollectionViewCell.swift in Sources */,
 				8624F5522BD49C730070DC91 /* SceneDelegate.swift in Sources */,
 				8624F5692BD49E410070DC91 /* Pokemon.swift in Sources */,
