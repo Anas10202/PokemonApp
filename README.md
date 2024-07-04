@@ -1,5 +1,5 @@
-# Pokemon App
-[https://www.loom.com/share/4fb461f4d7a44aa39b21b9e30becc2fd?sid=baf9de44-33fe-42d6-ad90-94dd1bb2c110]
+# Pokemon App-Work in Progress
+https://www.loom.com/share/4fb461f4d7a44aa39b21b9e30becc2fd?sid=baf9de44-33fe-42d6-ad90-94dd1bb2c110
 
 
 
